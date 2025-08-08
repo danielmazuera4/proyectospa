@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure--#i8nv#-!t4g^$$24b95ro$unsu0n9dc%&gzchziymiwnys1ln
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['valstudio.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['valstudio.onrender.com', ]
 
 
 # Application definition
