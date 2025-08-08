@@ -9,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Valstudio</title>
 
-    {% load static %}
 
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
 
     <!-- Tailwind CSS -->
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'valstudio/css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'valstudio/css/input.css' %}" rel="stylesheet" />
+
 
     <!-- Font Awesome (para íconos) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -92,7 +93,7 @@
             },
         });
     </script>
-    
+
     <script>
         // Carrusel específico para las galerías de los modales del catálogo
         const swiperGaleria = new Swiper(".mySwiperGaleria", {
@@ -113,8 +114,8 @@
         });
     </script>
 
-    
-    
+
+
 
 
     <!-- MODAL PAGINA DE CATALOGO -->
