@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<!-- SwiperJS CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valstudio</title>
+
+    {% load static %}
+
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+
+    <!-- Tailwind CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+    <!-- Font Awesome (para íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<body class="bg-white text-gray-800 scroll-smooth relative">
+
+    {% include 'includes/navbar.html' %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573001234567"
+        class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-green-600 transition z-50 animate-bounce"
+        target="_blank" aria-label="Chatea por WhatsApp">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- java scripts -->
+    <!-- MENU DE NAVEGACION -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleBtn = document.getElementById("menu-toggle");
+            const menu = document.getElementById("mobile-menu");
+
+            // Mostrar/ocultar menú al hacer clic en el botón
+            toggleBtn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+
+            // Cerrar menú cuando se hace clic en un enlace del menú móvil
+            const links = menu.querySelectorAll("a");
+            links.forEach(link => {
+                link.addEventListener("click", () => {
+                    menu.classList.add("hidden");
+                });
+            });
+        });
+    </script>
+
+
+    <!-- SwiperJS JS PAGINA HOME -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+    <script>
+        // Carruseles dentro de los modales
+        const modalesSwiper = new Swiper(".mySwiperModal", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+    
+    <script>
+        // Carrusel específico para las galerías de los modales del catálogo
+        const swiperGaleria = new Swiper(".mySwiperGaleria", {
+            slidesPerView: 1.5,
+            spaceBetween: 10,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.5,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+    
+    
+
+
+    <!-- MODAL PAGINA DE CATALOGO -->
+    <script>
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.classList.remove("hidden");
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) modal.classList.add("hidden");
+        }
+
+        document.addEventListener("click", function (e) {
+            document.querySelectorAll(".modal").forEach(modal => {
+                const content = modal.querySelector(".modal-content");
+                if (!modal.classList.contains("hidden") && !content.contains(e.target) && !e.target.closest("button")) {
+                    modal.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

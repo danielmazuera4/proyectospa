@@ -1,0 +1,75 @@
+{% load static %}
+
+<section id="home" class="bg-pink-50 py-20 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+
+    <!-- Columna izquierda: Texto y tarjeta -->
+    <div class="w-full md:w-1/2 text-center md:text-left space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 transition duration-500">
+        Arte en tus uñas
+      </h1>
+      <p class="text-lg text-gray-700 transition duration-500 delay-100">
+        En ValStudio transformamos tus uñas en obras de arte con diseños exclusivos y técnicas profesionales.
+      </p>
+
+      <!-- TARJETA DE SEDE -->
+      <div class="bg-pink-100 rounded-3xl p-6 shadow-lg space-y-2 text-left">
+        <p class="text-pink-600 text-sm font-semibold text-center">¡RESERVA EN NUESTRAS SEDES!</p>
+        <h3 class="text-center text-xl font-bold text-pink-500">ValStudio</h3>
+        <h4 class="text-center text-lg font-semibold text-gray-800">ValStudio C.C. Unicentro Cali</h4>
+
+        <p class="text-sm text-gray-700 flex items-start gap-2">
+          <i class="fas fa-map-marker-alt text-pink-500 mt-1"></i>
+          CRA. 100 #5-169, LOCAL 203, LAS VEGAS, CALI, VALLE DEL CAUCA
+        </p>
+        <p class="text-sm text-gray-700 flex items-start gap-2">
+          <i class="fas fa-clock text-pink-500 mt-1"></i>
+          L - S 9AM - 8PM · D-F 10AM - 7PM
+        </p>
+
+        <!-- BOTONES -->
+        <div class="flex gap-4 pt-3 justify-center md:justify-start">
+          <a href="#reserva"
+            class="inline-block bg-pink-500 text-white px-6 py-3 rounded-full shadow hover:bg-pink-600 transition duration-300 delay-200">
+            Agenda tu cita
+          </a>
+          <a href="#catalog"
+            class="inline-block bg-pink-500 text-white px-6 py-3 rounded-full shadow hover:bg-pink-600 transition duration-300 delay-200">
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna derecha: Carrusel de imágenes -->
+    <div class="w-full md:w-1/2">
+      <div class="relative group swiper mySwiper rounded-xl overflow-hidden shadow-xl">
+
+        <!-- Slides del carrusel -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="{% static 'img/muestra1.jpg' %}" alt="Arte 1" class="w-full h-80 object-cover rounded-xl">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% static 'img/muestra2.jpg' %}" alt="Arte 2" class="w-full h-80 object-cover rounded-xl">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% static 'img/muestra3.jpg' %}" alt="Arte 3" class="w-full h-80 object-cover rounded-xl">
+          </div>
+        </div>
+
+        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+        <div
+          class="swiper-button-prev text-pink-500 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex">
+        </div>
+        <div
+          class="swiper-button-next text-pink-500 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden md:flex">
+        </div>
+
+        <!-- Paginación -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+  </div>
+</section>

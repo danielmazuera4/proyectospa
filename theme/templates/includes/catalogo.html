@@ -1,0 +1,586 @@
+{% load static %}
+
+{% block content %}
+<!-- Catálogo -->
+<section id="catalog" class="bg-white py-16">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-pink-600">Nuestros Diseños</h2>
+        <p class="text-gray-600">Explora nuestra colección de diseños exclusivos para todos los gustos y ocasiones.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+
+        <!-- Item 1 -->
+        <div
+            class="relative bg-pink-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img src="{% static 'img/acrilicas.jpg' %}" alt="French Clásico"
+                class="w-full h-56 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">French Clásico</h3>
+                <p class="text-sm text-gray-600">Elegancia atemporal con punta blanca y base natural.</p>
+                <div class="text-pink-500 font-bold mt-2">$45.000</div>
+                <button onclick="openModal('modal1')"
+                    class="mt-4 bg-pink-500 text-white px-4 py-2 rounded-full text-sm hover:bg-pink-600">
+                    Ver más
+                </button>
+            </div>
+        </div>
+
+        <!-- MODAL Item 1 -->
+        <div id="modal1"
+            class="modal hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+
+            <!-- Contenido del modal -->
+            <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl p-6 shadow-xl">
+
+                <!-- Botón de cerrar modal -->
+                <button onclick="closeModal('modal1')"
+                    class="absolute top-2 right-4 text-gray-500 hover:text-pink-500 text-3xl font-bold leading-none">
+                    &times;
+                </button>
+
+                <!-- Título del modal -->
+                <h4 class="text-2xl font-bold text-pink-600 mb-4">Detalles: French Clásico</h4>
+
+                <!-- Carrusel de imágenes con Swiper -->
+                <div class="relative">
+                    <!-- Swiper contenedor -->
+                    <div class="swiper mySwiperGaleria">
+                        <!-- Swiper Wrapper: contenedor de slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Cada imagen es una slide -->
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/acrilicas.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 1" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/jardin.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 2" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 3" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 4" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 5" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 6" />
+                            </div>
+                        </div>
+
+                        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+                        <div class="swiper-button-prev hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+                        <div class="swiper-button-next hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Descripción del diseño -->
+                <p class="text-gray-700 mt-4">Elegancia tradicional con acabados modernos. Ideal para bodas o
+                    eventos
+                    casuales.</p>
+
+                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+                    <li>Duración: 3 semanas</li>
+                    <li>Material: Acrílico de alta calidad</li>
+                    <li>Incluye retoque gratuito</li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <a href="#reserva" onclick="closeModal('modal1')"
+                    class="mt-6 inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 text-sm">
+                    Reservar diseño
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Item 2 -->
+        <div
+            class="relative bg-pink-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img src="{% static 'img/jardin.jpg' %}" alt="Dulce Elegancia"
+                class="w-full h-56 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">Dulce Elegancia</h3>
+                <p class="text-sm text-gray-600">Rosados suaves con adornos de perlas y oro.</p>
+                <div class="text-pink-500 font-bold mt-2">$60.000</div>
+                <button onclick="openModal('modal2')"
+                    class="mt-4 bg-pink-500 text-white px-4 py-2 rounded-full text-sm hover:bg-pink-600">
+                    ver mas
+                </button>
+            </div>
+        </div>
+
+
+        <!-- MODAL Item 2 -->
+        <div id="modal2"
+            class="modal hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+
+            <!-- Contenido del modal -->
+            <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl p-6 shadow-xl">
+
+                <!-- Botón de cerrar modal -->
+                <button onclick="closeModal('modal2')"
+                    class="absolute top-2 right-4 text-gray-500 hover:text-pink-500 text-3xl font-bold leading-none">
+                    &times;
+                </button>
+
+                <!-- Título del modal -->
+                <h4 class="text-2xl font-bold text-pink-600 mb-4">Detalles: French Clásico</h4>
+
+                <!-- Carrusel de imágenes con Swiper -->
+                <div class="relative">
+                    <!-- Swiper contenedor -->
+                    <div class="swiper mySwiperGaleria">
+                        <!-- Swiper Wrapper: contenedor de slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Cada imagen es una slide -->
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/acrilicas.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 1" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/jardin.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 2" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 3" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 4" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 5" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 6" />
+                            </div>
+                        </div>
+
+                        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+                        <div class="swiper-button-prev hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+                        <div class="swiper-button-next hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Descripción del diseño -->
+                <p class="text-gray-700 mt-4">Elegancia tradicional con acabados modernos. Ideal para bodas o
+                    eventos
+                    casuales.</p>
+
+                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+                    <li>Duración: 3 semanas</li>
+                    <li>Material: Acrílico de alta calidad</li>
+                    <li>Incluye retoque gratuito</li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <a href="#reserva" onclick="closeModal('modal2')"
+                    class="mt-6 inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 text-sm">
+                    Reservar diseño
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Item 3 -->
+        <div
+            class="relative bg-pink-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img src="{% static 'img/soft.jpg' %}" alt="Geometría Moderna"
+                class="w-full h-56 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">Geometría Moderna</h3>
+                <p class="text-sm text-gray-600">Formas abstractas en negro y dorado.</p>
+                <div class="text-pink-500 font-bold mt-2">$55.000</div>
+                <button onclick="openModal('modal3')"
+                    class="mt-4 bg-pink-500 text-white px-4 py-2 rounded-full text-sm hover:bg-pink-600">
+                    ver mas
+                </button>
+            </div>
+        </div>
+
+        <!-- MODAL Item 3 -->
+        <div id="modal3"
+            class="modal hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+
+            <!-- Contenido del modal -->
+            <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl p-6 shadow-xl">
+
+                <!-- Botón de cerrar modal -->
+                <button onclick="closeModal('modal3')"
+                    class="absolute top-2 right-4 text-gray-500 hover:text-pink-500 text-3xl font-bold leading-none">
+                    &times;
+                </button>
+
+                <!-- Título del modal -->
+                <h4 class="text-2xl font-bold text-pink-600 mb-4">Detalles: French Clásico</h4>
+
+                <!-- Carrusel de imágenes con Swiper -->
+                <div class="relative">
+                    <!-- Swiper contenedor -->
+                    <div class="swiper mySwiperGaleria">
+                        <!-- Swiper Wrapper: contenedor de slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Cada imagen es una slide -->
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/acrilicas.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 1" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/jardin.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 2" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 3" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 4" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 5" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 6" />
+                            </div>
+                        </div>
+
+                        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+                        <div class="swiper-button-prev hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+                        <div class="swiper-button-next hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Descripción del diseño -->
+                <p class="text-gray-700 mt-4">Elegancia tradicional con acabados modernos. Ideal para bodas o
+                    eventos
+                    casuales.</p>
+
+                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+                    <li>Duración: 3 semanas</li>
+                    <li>Material: Acrílico de alta calidad</li>
+                    <li>Incluye retoque gratuito</li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <a href="#reserva" onclick="closeModal('modal3')"
+                    class="mt-6 inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 text-sm">
+                    Reservar diseño
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Item 4 -->
+        <div
+            class="relative bg-pink-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img src="{% static 'img/jardin.jpg' %}" alt="Jardín Floral" class="w-full h-56 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">Jardín Floral</h3>
+                <p class="text-sm text-gray-600">Flores delicadas pintadas a mano.</p>
+                <div class="text-pink-500 font-bold mt-2">$65.000</div>
+                <button onclick="openModal('modal4')"
+                    class="mt-4 bg-pink-500 text-white px-4 py-2 rounded-full text-sm hover:bg-pink-600">
+                    ver mas
+                </button>
+            </div>
+        </div>
+
+
+        <!-- MODAL Item 4 -->
+        <div id="modal4"
+            class="modal hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+
+            <!-- Contenido del modal -->
+            <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl p-6 shadow-xl">
+
+                <!-- Botón de cerrar modal -->
+                <button onclick="closeModal('modal4')"
+                    class="absolute top-2 right-4 text-gray-500 hover:text-pink-500 text-3xl font-bold leading-none">
+                    &times;
+                </button>
+
+                <!-- Título del modal -->
+                <h4 class="text-2xl font-bold text-pink-600 mb-4">Detalles: French Clásico</h4>
+
+                <!-- Carrusel de imágenes con Swiper -->
+                <div class="relative">
+                    <!-- Swiper contenedor -->
+                    <div class="swiper mySwiperGaleria">
+                        <!-- Swiper Wrapper: contenedor de slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Cada imagen es una slide -->
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/acrilicas.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 1" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/jardin.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 2" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 3" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 4" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 5" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 6" />
+                            </div>
+                        </div>
+
+                        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+                        <div class="swiper-button-prev hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+                        <div class="swiper-button-next hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Descripción del diseño -->
+                <p class="text-gray-700 mt-4">Elegancia tradicional con acabados modernos. Ideal para bodas o
+                    eventos
+                    casuales.</p>
+
+                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+                    <li>Duración: 3 semanas</li>
+                    <li>Material: Acrílico de alta calidad</li>
+                    <li>Incluye retoque gratuito</li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <a href="#reserva" onclick="closeModal('modal4')"
+                    class="mt-6 inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 text-sm">
+                    Reservar diseño
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Item 5 -->
+        <div
+            class="relative bg-pink-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img src="{% static 'img/jardin.jpg' %}" alt="Degradé Holográfico"
+                class="w-full h-56 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">Degradé Holográfico</h3>
+                <p class="text-sm text-gray-600">Efecto arcoíris en degradé rosado.</p>
+                <div class="text-pink-500 font-bold mt-2">$50.000</div>
+                <button onclick="openModal('modal5')"
+                    class="mt-4 bg-pink-500 text-white px-4 py-2 rounded-full text-sm hover:bg-pink-600">
+                    ver mas
+                </button>
+            </div>
+        </div>
+
+
+        <!-- MODAL Item 5 -->
+        <div id="modal5"
+            class="modal hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+
+            <!-- Contenido del modal -->
+            <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl p-6 shadow-xl">
+
+                <!-- Botón de cerrar modal -->
+                <button onclick="closeModal('modal5')"
+                    class="absolute top-2 right-4 text-gray-500 hover:text-pink-500 text-3xl font-bold leading-none">
+                    &times;
+                </button>
+
+                <!-- Título del modal -->
+                <h4 class="text-2xl font-bold text-pink-600 mb-4">Detalles: French Clásico</h4>
+
+                <!-- Carrusel de imágenes con Swiper -->
+                <div class="relative">
+                    <!-- Swiper contenedor -->
+                    <div class="swiper mySwiperGaleria">
+                        <!-- Swiper Wrapper: contenedor de slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Cada imagen es una slide -->
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/acrilicas.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 1" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/jardin.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 2" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 3" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 4" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 5" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 6" />
+                            </div>
+                        </div>
+
+                        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+                        <div class="swiper-button-prev hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+                        <div class="swiper-button-next hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Descripción del diseño -->
+                <p class="text-gray-700 mt-4">Elegancia tradicional con acabados modernos. Ideal para bodas o
+                    eventos
+                    casuales.</p>
+
+                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+                    <li>Duración: 3 semanas</li>
+                    <li>Material: Acrílico de alta calidad</li>
+                    <li>Incluye retoque gratuito</li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <a href="#reserva" onclick="closeModal('modal5')"
+                    class="mt-6 inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 text-sm">
+                    Reservar diseño
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Item 6 -->
+        <div
+            class="relative bg-pink-50 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img src="{% static 'img/pedicure.jpg' %}" alt="Minimalista Acentuado"
+                class="w-full h-56 object-cover rounded-t-lg">
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-800">Minimalista Acentuado</h3>
+                <p class="text-sm text-gray-600">Nudes con un toque de color.</p>
+                <div class="text-pink-500 font-bold mt-2">$48.000</div>
+                <button onclick="openModal('modal6')"
+                    class="mt-4 bg-pink-500 text-white px-4 py-2 rounded-full text-sm hover:bg-pink-600">
+                    ver mas
+                </button>
+            </div>
+        </div>
+
+
+        <!-- MODAL Item 6 -->
+        <div id="modal6"
+            class="modal hidden fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center">
+
+            <!-- Contenido del modal -->
+            <div class="modal-content bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl p-6 shadow-xl">
+
+                <!-- Botón de cerrar modal -->
+                <button onclick="closeModal('modal6')"
+                    class="absolute top-2 right-4 text-gray-500 hover:text-pink-500 text-3xl font-bold leading-none">
+                    &times;
+                </button>
+
+                <!-- Título del modal -->
+                <h4 class="text-2xl font-bold text-pink-600 mb-4">Detalles: French Clásico</h4>
+
+                <!-- Carrusel de imágenes con Swiper -->
+                <div class="relative">
+                    <!-- Swiper contenedor -->
+                    <div class="swiper mySwiperGaleria">
+                        <!-- Swiper Wrapper: contenedor de slides -->
+                        <div class="swiper-wrapper">
+                            <!-- Cada imagen es una slide -->
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/acrilicas.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 1" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/jardin.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 2" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 3" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 4" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 5" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{% static 'img/soft.jpg' %}" class="h-40 rounded-lg w-full object-cover"
+                                    alt="Imagen 6" />
+                            </div>
+                        </div>
+
+                        <!-- Flechas de navegación visibles solo en pantallas medianas o más -->
+                        <div class="swiper-button-prev hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+                        <div class="swiper-button-next hidden md:flex text-pink-500 hover:text-pink-600 transition">
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Descripción del diseño -->
+                <p class="text-gray-700 mt-4">Elegancia tradicional con acabados modernos. Ideal para bodas o
+                    eventos
+                    casuales.</p>
+
+                <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+                    <li>Duración: 3 semanas</li>
+                    <li>Material: Acrílico de alta calidad</li>
+                    <li>Incluye retoque gratuito</li>
+                </ul>
+
+                <!-- Botón de reserva -->
+                <a href="#reserva" onclick="closeModal('modal6')"
+                    class="mt-6 inline-block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 text-sm">
+                    Reservar diseño
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+{% endblock %}
